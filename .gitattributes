@@ -1,1 +1,4 @@
 dataset filter=lfs diff=lfs merge=lfs -text
+vercel.json filter=lfs diff=lfs merge=lfs -text
+config.json filter=lfs diff=lfs merge=lfs -text
+generation_config.json filter=lfs diff=lfs merge=lfs -text
