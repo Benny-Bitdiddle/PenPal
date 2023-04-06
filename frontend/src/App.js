@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <InputForm />
+      {/* <InputForm /> */}
       <SummaryDisplay />
     </div>
   );
