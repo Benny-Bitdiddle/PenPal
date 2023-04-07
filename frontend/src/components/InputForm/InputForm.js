@@ -14,7 +14,6 @@ const InputForm = ({ setSummary }) => {
     e.preventDefault();
     try {
       const response = await axios.post(NLPBackend, { article: inputText });
-      console.log(response.data);
       setSummary(response.data.summary);
     } catch (error) {
       console.error(error);
