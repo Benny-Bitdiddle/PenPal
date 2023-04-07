@@ -10,31 +10,36 @@ SummaryBuddy was developed to save time trying to digest lengthy articles using 
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
+After cloning, please run the following command to download the required python dependencies.
+```
+pip3 install -r requirements.txt
+```
+
 ### Client Side
 
 Switch to Client Side (frontend) Directory:
 
 `cd frontend`
 
-Installation:
+Installation: `npm install`
 
-`npm install`
+To Start Client: `npm start`
 
-To Start Client:
-
-`npm start`
-
-To Visit App:
-
-`localhost:3000/`
+To Visit App: `localhost:3000/`
 
 ### Server Side
+Switch to Server Side (backend) Directory:
+```
+python3 app.py
+```
+> The backend server should be set up on `http://127.0.0.1:5000`
+
 
 ## How it works
 
 Our Machine Learning(ML) Model is trained on the `multi_news` dataset allowing our model to produce summaries that are accurate and precise over a wide-range of topics.
 
-We also created a website which has fields to make use of `REST API` to connect to get an output from our ML model.
+We also created a website which has fields to make use of `REST` to connect to get an output from our ML model.
 
 ## Tech Stack
 
