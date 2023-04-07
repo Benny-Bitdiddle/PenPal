@@ -1,10 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
 import styles from "./InputForm.module.css";
+import { ClipLoader } from "react-spinners";
 
 const InputForm = ({ setSummary }) => {
   const NLPBackend = process.env.REACT_APP_NLP_BACKEND;
   const [inputText, setInputText] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleTextChange = (e) => {
     setInputText(e.target.value);
@@ -12,11 +14,14 @@ const InputForm = ({ setSummary }) => {
 
   const handleSubmitText = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const response = await axios.post(NLPBackend, { article: inputText });
       setSummary(response.data.summary);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -37,8 +42,13 @@ const InputForm = ({ setSummary }) => {
         type="button"
         onClick={handleSubmitText}
         className={styles.button}
+        disabled={isLoading}
       >
-        Summarize Text
+        {isLoading ? (
+          <ClipLoader size={15} color={"#ffffff"} loading={isLoading} />
+        ) : (
+          "Summarize Text"
+        )}
       </button>
     </form>
   );
