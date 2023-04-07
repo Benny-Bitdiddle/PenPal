@@ -3,36 +3,18 @@ import axios from "axios";
 import styles from "./InputForm.module.css";
 
 const InputForm = ({ setSummary }) => {
-  const NLPBlackbox = `${process.env.NLP_BLACKBOX}`;
+  const NLPBackend = process.env.REACT_APP_NLP_BACKEND;
   const [inputText, setInputText] = useState("");
-  const [inputUrl, setInputUrl] = useState("");
 
   const handleTextChange = (e) => {
     setInputText(e.target.value);
   };
 
-  const handleUrlChange = (e) => {
-    setInputUrl(e.target.value);
-  };
-
   const handleSubmitText = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(NLPBlackbox, {
-        text: inputText,
-      });
-      setSummary(response.data.summary);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleSubmitUrl = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(NLPBlackbox, {
-        url: inputUrl,
-      });
+      const response = await axios.post(NLPBackend, { article: inputText });
+      console.log(response.data);
       setSummary(response.data.summary);
     } catch (error) {
       console.error(error);
@@ -58,21 +40,6 @@ const InputForm = ({ setSummary }) => {
         className={styles.button}
       >
         Summarize Text
-      </button>
-      <div className={styles["label-container"]}>
-        <label htmlFor="url-input" className={styles.label}>
-          URL:
-        </label>
-        <input
-          type="text"
-          id="url-input"
-          value={inputUrl}
-          onChange={handleUrlChange}
-          className={styles.input}
-        />
-      </div>
-      <button type="button" onClick={handleSubmitUrl} className={styles.button}>
-        Summarize URL
       </button>
     </form>
   );
