@@ -4,7 +4,7 @@ import styles from "./InputForm.module.css";
 import { ClipLoader } from "react-spinners";
 
 const InputForm = ({ setSummary }) => {
-  const NLPBackend = process.env.REACT_APP_NLP_BACKEND;
+  const NLPBackend = 'http://127.0.0.1:5000/summarize';
   const [inputText, setInputText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
