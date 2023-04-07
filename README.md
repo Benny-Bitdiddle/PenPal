@@ -2,6 +2,8 @@
 
 SummaryBuddy is a web application that enables students to easily get summarised text from news articles.
 
+![SummaryBuddy](img/SummaryBuddy.jpg)
+
 ## About the project
 
 SummaryBuddy was developed to save time trying to digest lengthy articles using Machine Learning (ML). In this digital era, an abundance of information is placed out there on the web. As such, our tool eases their information gathering process and effectiveness.
@@ -19,7 +21,9 @@ pip3 install -r requirements.txt
 
 Switch to Client Side (frontend) Directory:
 
-`cd frontend`
+```
+cd frontend
+```
 
 Installation: `npm install`
 
@@ -30,8 +34,9 @@ To Visit App: `localhost:3000/`
 ### Server Side
 Switch to Server Side (backend) Directory:
 ```
-python3 app.py
+cd backend
 ```
+Start the Backend API: `python3 app.py`
 > The backend server should be set up on `http://127.0.0.1:5000`
 
 
