@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="title">PenPal</h1>
+        <h1 className="title">SummaryBuddy</h1>
       </header>
       <main>
         <InputForm setSummary={setSummary} />
