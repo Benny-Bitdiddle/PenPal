@@ -54,6 +54,9 @@ We also created a website which has fields to make use of `REST` to connect to g
   <code><img height="50" src="img/react.svg" alt="React" title="React" /></code>
 </div>
 
+## Product Demo
+[![SummaryBuddy Product Demo](https://github.com/Benny-Bitdiddle/SummaryBuddy/blob/main/img/SummaryBuddy%20Product%20Demo.png)](https://youtu.be/gUCXATMEGbE)
+
 ## Collaborators
 
 [Merrickneo](https://github.com/Merrickneo)
