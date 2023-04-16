@@ -27,7 +27,7 @@ def summarize():
         article = request.json.get('article')
         
         # Use the summarizer pipeline to generate a summary
-        summary = summarizer(article, max_length=130, min_length=30, do_sample=False)
+        summary = summarizer(article, max_length=200, min_length=30, do_sample=False)
         
         # Extract the summarized text from the output
         summarized_text = summary[0]['summary_text']
